@@ -1,0 +1,30 @@
+networks:
+  app-network:
+    driver: overlay
+
+services:
+  frontend:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    networks:
+      - app-network
+    deploy:
+      replicas: 1
+
+  backend:
+    build: ./backend
+    image: sudar2005/three-tier-backend:0.0.1
+    networks:
+      - app-network
+    deploy:
+      replicas: 1
+
+  db:
+    image: redis:alpine
+    networks:
+      - app-network
+    deploy:
+      replicas: 1
