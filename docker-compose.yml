@@ -4,11 +4,9 @@ networks:
 
 services:
   frontend:
-    image: nginx:alpine
+    image: three-tier-frontend:0.0.1
     ports:
-      - "3000:80"
-    volumes:
-      - ./frontend:/usr/share/nginx/html
+      - "8000:80"
     networks:
       - app-network
     deploy:
@@ -19,8 +17,6 @@ services:
     image: three-tier-backend:0.0.1
     networks:
       - app-network
-    ports:
-      - "8000:8000"
     deploy:
       replicas: 1
 
