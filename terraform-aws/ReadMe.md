@@ -16,7 +16,6 @@ main.tf / variables.tf / outputs.tf   — root, wires modules together
 modules/network/    — VPC, public subnet, IGW, route table
 modules/security/   — security group (22, 80, 443 in; all out)
 modules/compute/    — AMI lookup, EC2 instance, Elastic IP, bootstrap script
-k8s-manifests/       — copies of your uploaded YAML, embedded into the VM at boot
 ```
 
 ## Architecture
@@ -63,5 +62,4 @@ Windows:
 ```
 icacls.exe <filename>.pem /inheritance:r
 icacls.exe .\counter-app-key.pem /grant:r "$($env:USERNAME):(R,W)"
-```
 ```
