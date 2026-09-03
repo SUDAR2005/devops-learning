@@ -1,9 +1,3 @@
-variable "os_cloud" {
-  description = "Name of the cloud entry in clouds.yaml to use for authentication."
-  type = string
-  default = null
-}
-
 variable "instance" {
   description = "All settings for the compute instance. Any field left null/omitted is simply not attached to the resource."
   type = object({
@@ -45,7 +39,6 @@ variable "instance" {
       volume_type = optional(string)
       multiattach = optional(bool)
       guest_format = optional(string)
-      tag = optional(string)
     })))
   })
 }

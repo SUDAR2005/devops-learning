@@ -42,7 +42,6 @@ resource "openstack_compute_instance_v2" "this" {
       volume_type = block_device.value.volume_type
       multiattach = block_device.value.multiattach
       guest_format = block_device.value.guest_format
-      tag = block_device.value.tag
     }
   }
 }

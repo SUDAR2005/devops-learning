@@ -49,7 +49,7 @@ variable "availability_zone" {
 
 variable "availability_zone_hints" {
   description = "Availability zone hints, used with certain scheduler configurations."
-  type = list(string)
+  type = string
   default = null
 }
 
