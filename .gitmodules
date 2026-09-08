@@ -1,0 +1,3 @@
+[submodule "sonar-scan"]
+	path = sonar-scan
+	url = https://gitlab.com
