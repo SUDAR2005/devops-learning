@@ -1,0 +1,19 @@
+stages:
+  - build
+  - upload
+
+variables:
+  IMAGE_TAG: "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHA"
+
+include:
+  - project: 'mysterychap-group1/templates'       
+    file: 
+      - '/build-image.yml'
+      - '/scan-docker.yml'
+build_job:
+  stage: build
+  extends: .build-image-template
+
+scan_and_upload_job:
+  stage: upload
+  extends: .scan_docker_template

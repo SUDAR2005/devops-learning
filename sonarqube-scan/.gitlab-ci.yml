@@ -1,0 +1,7 @@
+stages:
+  - scan
+  - upload
+
+include:
+  - local: '.gitlab/ci/sonar-scan.yml'
+  - local: '.gitlab/ci/upload-defectdojo.yml'

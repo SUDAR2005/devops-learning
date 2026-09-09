@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap');
+@import "tailwindcss";
+
+body {
+  @apply bg-gradient-to-br from-pink-100 via-purple-100 to-pink-50 min-h-screen;
+}
